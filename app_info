@@ -1,0 +1,33 @@
+-Setting worspace project up for Cload9-
+wget -q https://git.io/v77xs -O /tmp/setup-workspace.sh && source /tmp/setup-workspace.sh
+
+-Installing Django-
+pip install django==1.11.29
+
+-Creating a virtual enviroment-
+    pip3 install virtualenv
+    mkvirtualenv foo
+--------------------------------------------
+virtualenv .venv (name)
+source .(virtual-env name)/bin/activate
+
+python3 -m pip install --user --upgrade pip
+python3 -m pip install --upgrade pip
+
+
+ERROR: Can not perform a '--user' install. User site-packages are not visible in this virtualenv.
+    Btw found the solution. There's a setting you have to toggle to remove --user flag while installation.
+    Set "python.globalModuleInstallation": true in your user settings json.
+---------------------------------------------
+
+pip install django
+pip freeze > requirements.txt
+pip install -r requirements.txt
+
+django-admin startproject blog .
+
+-Changing properties and rights on manage.py-
+chmod +x manage.py
+
+-Adding a exexutable flag to run it-
+./manage.py
