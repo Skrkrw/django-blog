@@ -1,3 +1,7 @@
+Running server
+./manage.py runserver $C9:$PORT
+
+--------------------------------------------
 -Setting worspace project up for Cload9-
 wget -q https://git.io/v77xs -O /tmp/setup-workspace.sh && source /tmp/setup-workspace.sh
 
@@ -18,6 +22,26 @@ python3 -m pip install --upgrade pip
 ERROR: Can not perform a '--user' install. User site-packages are not visible in this virtualenv.
     Btw found the solution. There's a setting you have to toggle to remove --user flag while installation.
     Set "python.globalModuleInstallation": true in your user settings json.
+    
+*********************************************
+$virtualenv .venv (create virtual environment)
+$source .venv/bin/activate (activate virtual environment)
+$python3 -m pip install --user --upgrade pip (check pip is up to date)
+$python3 -m pip install --user django==1.11.24 (install django)
+$python3 -m pip freeze --user --local>requirements.txt
+$django-admin start project blog .
+$chmod +x manage.py (make manage.py file executable)(also this command initilize the DB)
+$python3 ./manage.py migrate 
+...
+
+Travis.yml:
+language: python
+python:
+    - "3.4"
+install: "pip install -r requirements.txt"
+script:
+    - SECRET_KEY="whatever" python3 ./manage.py test
+**********************************************************************
 ---------------------------------------------
 
 pip install django
