@@ -6,6 +6,8 @@ Welcome Jose Enciso,
 
 A simple blog app written using Django.
 
+[![Build Status](https://travis-ci.org/Skrkrw/django-blog.svg?branch=master)](https://travis-ci.org/Skrkrw/django-blog)
+
 
 
 

@@ -1,6 +1,10 @@
 Running server
 ./manage.py runserver $C9:$PORT
 
+
+echo -e "*.sqlite3\n*.pyc\n.~c9\n__pycache__/" >.gitignore  
+
+travis.ci.org - The home of open source testing
 --------------------------------------------
 -Setting worspace project up for Cload9-
 wget -q https://git.io/v77xs -O /tmp/setup-workspace.sh && source /tmp/setup-workspace.sh
