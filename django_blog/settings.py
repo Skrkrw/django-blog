@@ -28,7 +28,7 @@ DEBUG = True
 ALLOWED_HOSTS = [u'1dc8662a2c994be18a356a491b767a90.vfs.cloud9.us-east-1.amazonaws.com']
 
 
-# Application definition
+# Application definition - Serving Out the Templates
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -37,6 +37,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django_forms_bootstrap',
+    'post',
+    
 ]
 
 MIDDLEWARE = [
@@ -54,7 +57,7 @@ ROOT_URLCONF = 'django_blog.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')], # Telling django where the are the templates
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -62,6 +65,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'django.template.context_processros.media', # Adding a new contex_processor
             ],
         },
     },
@@ -117,4 +121,8 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
-STATIC_URL = '/static/'
+STATIC_URL = '/static/' # Reference URL or label
+STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'), ) # Actual/right directory
+
+MEDIA_URL = '/media/' # This is how Django refers to a URL and not to an specific directory
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media') # Refering to the name of directory

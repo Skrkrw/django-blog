@@ -59,3 +59,21 @@ chmod +x manage.py
 
 -Adding a exexutable flag to run it-
 ./manage.py
+
+New App
+    ./manage.py startapp posts
+
+Django Images
+pip install pillow
+
+pip freeze > requirements.txt
+
+workon foo
+source .foo/bin/activate
+
+Rendering forms with bootstrap
+pip install django-forms-bootstrap
+
+ - = hyphens
+ _ = underscores
+ | = pipesign
