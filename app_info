@@ -42,17 +42,17 @@ Travis.yml:
 language: python
 python:
     - "3.4"
-install: "pip install -r requirements.txt"
+install: "pip3 install -r requirements.txt"
 script:
     - SECRET_KEY="whatever" python3 ./manage.py test
 **********************************************************************
 ---------------------------------------------
 
-pip install django
-pip freeze > requirements.txt
-pip install -r requirements.txt
+pip3 install django
+pip3 freeze > requirements.txt
+pip3 install -r requirements.txt
 
-django-admin startproject blog .
+python3 django-admin startproject blog .
 
 -Changing properties and rights on manage.py-
 chmod +x manage.py
@@ -64,16 +64,53 @@ New App
     ./manage.py startapp posts
 
 Django Images
-pip install pillow
+pip3 install pillow
 
-pip freeze > requirements.txt
+pip3 freeze > requirements.txt
 
 workon foo
 source .foo/bin/activate
 
+*********************************************
+workon: command not found
+---------------------------------------------
+Solving this problem took two steps:
+
+Add this to your .bashrc / .bash_profile / .zshrc:
+
+# load virtualenvwrapper for python (after custom PATHs)
+venvwrap="virtualenvwrapper.sh"
+/usr/bin/which -s $venvwrap
+if [ $? -eq 0 ]; then
+    venvwrap=`/usr/bin/which $venvwrap`
+    source $venvwrap
+fi
+Then use:
+
+source .bash_profile
+# or .bashrc / .zshrc
+to reflect the changes.
+
+Additionally, if the terminal still sometimes cant find 
+workon, use source .bash_profile to reset and find it again.
+
+*********************************************
+*********************************************
+
 Rendering forms with bootstrap
 pip install django-forms-bootstrap
+pip3 install django-forms-bootstrap
 
  - = hyphens
  _ = underscores
  | = pipesign
+
+Creating a super user 
+./manage.py createsuperuser
+jose
+josejefloen@gmial.com
+
+python3 manage.py runserver
+
+python3 manage.py runserver $IP:$PORT
+

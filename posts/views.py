@@ -12,9 +12,9 @@ def get_posts(request):
     """Create a view that will return a list of Posts
     that wew published prior to 'now' and render them
     to the 'blogspot.html' template"""
-    posts = Post.objects.filter(published_date__lte=timezone.now().order_by().order_by('-published_date'))
+    posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('-published_date')
     # published_date__let
-    return render(request, "blogspots.html", {'posts': posts})
+    return render(request, "blogposts.html", {'posts': posts})
 
 
 def post_detail(request, pk):
