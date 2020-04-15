@@ -35,6 +35,7 @@ $python3 -m pip install --user django==1.11.24 (install django)
 $python3 -m pip freeze --user --local>requirements.txt
 $django-admin start project blog .
 $chmod +x manage.py (make manage.py file executable)(also this command initilize the DB)
+$pyhon3 manage.py makemigrations
 $python3 ./manage.py migrate 
 ...
 
@@ -114,3 +115,14 @@ python3 manage.py runserver
 
 python3 manage.py runserver $IP:$PORT
 
+This libreries will allows to connect to a database using a URL
+pip3 install dj-database-url psycopg2
+
+pip install psycopg2-binary
+
+migrations > migrate > createsuperuser
+
+This librery allow us to host static files correctly in heroku
+pip3 install whitenoise
+
+pip3 install gunicorn
