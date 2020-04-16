@@ -126,3 +126,5 @@ This librery allow us to host static files correctly in heroku
 pip3 install whitenoise
 
 pip3 install gunicorn
+
+requirements > removed > cloud-init==19.4
