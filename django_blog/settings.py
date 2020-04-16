@@ -31,7 +31,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = [u'1dc8662a2c994be18a356a491b767a90.vfs.cloud9.us-east-1.amazonaws.com', 'jose-blogs.herokuapp.com/']
+ALLOWED_HOSTS = [u'1dc8662a2c994be18a356a491b767a90.vfs.cloud9.us-east-1.amazonaws.com', 'jose-blogs.herokuapp.com']
 
 
 # Application definition - Serving Out the Templates
